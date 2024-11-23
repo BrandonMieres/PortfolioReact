@@ -8,7 +8,7 @@ const projects = [
     description:
       'A project that allows efficient cloning of websites while ensuring that all original functionalities are preserved.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    link: '#',
+    link: 'https://github.com/BrandonMieres',
     image: '/img/portfolio3.png',
   },
   {
@@ -16,7 +16,7 @@ const projects = [
     description:
       'Development of software that automatically translates texts using translation APIs.',
     tech: ['Python', 'Flask', 'Google Translate API'],
-    link: '#',
+    link: 'https://github.com/BrandonMieres',
     image: '/img/portfolio5.png',
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     description:
       'An integrated system for managing business resources, including inventory and invoicing.',
     tech: ['PHP', 'MySQL', 'Bootstrap'],
-    link: '#',
+    link: 'https://github.com/BrandonMieres',
     image: '/img/portfolio4.png',
   },
 ];
