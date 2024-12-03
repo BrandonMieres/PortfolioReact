@@ -7,44 +7,129 @@ import { User, Target, CheckCircle, Repeat, Headphones, Users, Heart } from 'luc
 const hhepHabits = [
   { 
     name: 'Be Proactive', 
-    description: 'Take responsibility for your reactions and behaviors.', 
-    moreInfo: 'This habit emphasizes taking control of your actions and attitudes, rather than reacting to external events.', 
+    description: (
+      <>
+        Take <span className="text-purple-500">responsibility</span> for your{' '}
+        <span className="text-purple-500">reactions</span> and{' '}
+        <span className="text-purple-500">behaviors</span>.
+      </>
+    ), 
+    moreInfo: (
+      <>
+        This habit emphasizes taking{' '}
+        <span className="text-purple-500">control</span> of your{' '}
+        <span className="text-purple-500">actions</span> and{' '}
+        <span className="text-purple-500">attitudes</span>, rather than{' '}
+        <span className="text-purple-500">reacting</span> to external events.
+      </>
+    ), 
     icon: <User className="w-6 h-6 text-pink-400" /> 
   },
+  
   { 
     name: 'Begin with the End in Mind', 
-    description: 'Define a clear vision of your desired outcomes.', 
-    moreInfo: 'This habit encourages you to set clear goals and understand your desired results before taking action.', 
+    description: (
+      <>
+        <span className="text-purple-500">Define</span> a clear vision of your{' '}
+        <span className="text-purple-500">desired outcomes</span>.
+      </>
+    ), 
+    moreInfo: (
+      <>
+        This habit encourages you to <span className="text-purple-500">set</span> clear{' '}
+        <span className="text-purple-500">goals</span> and understand your{' '}
+        <span className="text-purple-500">desired results</span> before taking{' '}
+        <span className="text-purple-500">action</span>.
+      </>
+    ), 
     icon: <Target className="w-6 h-6 text-pink-400" /> 
   },
+  
   { 
     name: 'Put First Things First', 
-    description: 'Prioritize important tasks over urgent but less important ones.', 
-    moreInfo: 'This habit helps you focus on what matters most, organizing tasks based on their importance rather than urgency.', 
+    description: (
+      <>
+        <span className="text-purple-500">Prioritize</span> important tasks over urgent but{' '}
+        <span className="text-purple-500">less important</span> ones.
+      </>
+    ), 
+    moreInfo: (
+      <>
+        This habit helps you <span className="text-purple-500">focus</span> on what matters{' '}
+        <span className="text-purple-500">most</span>, organizing tasks based on their{' '}
+        <span className="text-purple-500">importance</span> rather than <span className="text-purple-500">urgency</span>.
+      </>
+    ), 
     icon: <CheckCircle className="w-6 h-6 text-pink-400" /> 
   },
+  
   { 
     name: 'Think Win-Win', 
-    description: 'Seek mutually beneficial solutions in relationships and business.', 
-    moreInfo: 'Win-Win thinking aims for solutions that benefit all parties, creating a sense of shared success.', 
+    description: (
+      <>
+        Seek mutually beneficial <span className="text-purple-500">solutions</span> in{' '}
+        <span className="text-purple-500">relationships</span> and <span className="text-purple-500">business</span>.
+      </>
+    ), 
+    moreInfo: (
+      <>
+        <span className="text-purple-500">Win-Win</span> thinking aims for <span className="text-purple-500">solutions</span> that benefit{' '}
+        all parties, creating a sense of shared <span className="text-purple-500">success</span>.
+      </>
+    ), 
     icon: <Users className="w-6 h-6 text-pink-400" /> 
   },
+  
   { 
     name: 'Seek First to Understand, Then to Be Understood', 
-    description: 'Listen actively before expressing your own point of view.', 
-    moreInfo: 'This habit promotes empathetic listening, allowing you to fully understand others before communicating your perspective.', 
+    description: (
+      <>
+        <span className="text-purple-500">Listen</span> actively before expressing your own{' '}
+        <span className="text-purple-500">point of view</span>.
+      </>
+    ), 
+    moreInfo: (
+      <>
+        This habit promotes <span className="text-purple-500">empathetic</span> listening, allowing you to fully{' '}
+        <span className="text-purple-500">understand</span> others before communicating your{' '}
+        <span className="text-purple-500">perspective</span>.
+      </>
+    ), 
     icon: <Headphones className="w-6 h-6 text-pink-400" /> 
   },
+  
   { 
     name: 'Synergize', 
-    description: 'Combine strengths through teamwork and collaboration.', 
-    moreInfo: 'Synergy is about working together to create better solutions than could be achieved individually.', 
+    description: (
+      <>
+        <span className="text-purple-500">Combine</span> strengths through teamwork and{' '}
+        <span className="text-purple-500">collaboration</span>.
+      </>
+    ), 
+    moreInfo: (
+      <>
+        Synergy is about <span className="text-purple-500">working together</span> to create better{' '}
+        <span className="text-purple-500">solutions</span> than could be achieved{' '}
+        <span className="text-purple-500">individually</span>.
+      </>
+    ), 
     icon: <Repeat className="w-6 h-6 text-pink-400" /> 
   },
+  
   { 
     name: 'Sharpen the Saw', 
-    description: 'Renew yourself physically, mentally, emotionally, and spiritually.', 
-    moreInfo: 'This habit is about self-care and renewal, ensuring you maintain balance and health in all aspects of your life.', 
+    description: (
+      <>
+        <span className="text-purple-500">Renew</span> yourself physically, mentally, emotionally, and{' '}
+        <span className="text-purple-500">spiritually</span>.
+      </>
+    ), 
+    moreInfo: (
+      <>
+        This habit is about <span className="text-purple-500">self-care</span> and <span className="text-purple-500">renewal</span>, ensuring you maintain{' '}
+        <span className="text-purple-500">balance</span> and <span className="text-purple-500">health</span> in all aspects of your life.
+      </>
+    ), 
     icon: <Heart className="w-6 h-6 text-pink-400" /> 
   },
 ]
