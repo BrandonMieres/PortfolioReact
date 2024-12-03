@@ -16,11 +16,7 @@ const hhepHabits = [
     ), 
     moreInfo: (
       <>
-        This habit emphasizes taking{' '}
-        <span className="text-purple-500">control</span> of your{' '}
-        <span className="text-purple-500">actions</span> and{' '}
-        <span className="text-purple-500">attitudes</span>, rather than{' '}
-        <span className="text-purple-500">reacting</span> to external events.
+        I apply this habit by always trying to take control of my actions. When something goes wrong, I try to understand what I could have done differently, rather than blaming external factors.
       </>
     ), 
     icon: <User className="w-6 h-6 text-pink-400" /> 
@@ -36,10 +32,7 @@ const hhepHabits = [
     ), 
     moreInfo: (
       <>
-        This habit encourages you to <span className="text-purple-500">set</span> clear{' '}
-        <span className="text-purple-500">goals</span> and understand your{' '}
-        <span className="text-purple-500">desired results</span> before taking{' '}
-        <span className="text-purple-500">action</span>.
+        Before starting any project or task, I always take a moment to visualize the end result I want to achieve. This helps me stay focused and motivated to reach that goal, whether it's a professional task or a personal achievement.
       </>
     ), 
     icon: <Target className="w-6 h-6 text-pink-400" /> 
@@ -55,9 +48,7 @@ const hhepHabits = [
     ), 
     moreInfo: (
       <>
-        This habit helps you <span className="text-purple-500">focus</span> on what matters{' '}
-        <span className="text-purple-500">most</span>, organizing tasks based on their{' '}
-        <span className="text-purple-500">importance</span> rather than <span className="text-purple-500">urgency</span>.
+        I apply this habit by carefully prioritizing my day. I always focus on what will bring the most value in the long term, rather than being overwhelmed by tasks that seem urgent but are not as important.
       </>
     ), 
     icon: <CheckCircle className="w-6 h-6 text-pink-400" /> 
@@ -73,8 +64,7 @@ const hhepHabits = [
     ), 
     moreInfo: (
       <>
-        <span className="text-purple-500">Win-Win</span> thinking aims for <span className="text-purple-500">solutions</span> that benefit{' '}
-        all parties, creating a sense of shared <span className="text-purple-500">success</span>.
+        I use this habit to approach both personal and professional relationships with a mindset of collaboration. I always look for ways that both sides can benefit from any agreement or partnership, rather than focusing on individual gain.
       </>
     ), 
     icon: <Users className="w-6 h-6 text-pink-400" /> 
@@ -90,9 +80,7 @@ const hhepHabits = [
     ), 
     moreInfo: (
       <>
-        This habit promotes <span className="text-purple-500">empathetic</span> listening, allowing you to fully{' '}
-        <span className="text-purple-500">understand</span> others before communicating your{' '}
-        <span className="text-purple-500">perspective</span>.
+        In my personal life, I strive to listen fully before jumping to conclusions. This habit helps me better understand others' perspectives and respond with empathy, which strengthens my relationships.
       </>
     ), 
     icon: <Headphones className="w-6 h-6 text-pink-400" /> 
@@ -108,9 +96,7 @@ const hhepHabits = [
     ), 
     moreInfo: (
       <>
-        Synergy is about <span className="text-purple-500">working together</span> to create better{' '}
-        <span className="text-purple-500">solutions</span> than could be achieved{' '}
-        <span className="text-purple-500">individually</span>.
+        In my work and personal life, I often look for opportunities to collaborate with others. I recognize that by combining our strengths, we can achieve much better results than if we work alone.
       </>
     ), 
     icon: <Repeat className="w-6 h-6 text-pink-400" /> 
@@ -126,8 +112,7 @@ const hhepHabits = [
     ), 
     moreInfo: (
       <>
-        This habit is about <span className="text-purple-500">self-care</span> and <span className="text-purple-500">renewal</span>, ensuring you maintain{' '}
-        <span className="text-purple-500">balance</span> and <span className="text-purple-500">health</span> in all aspects of your life.
+        I make sure to take time for myself regularly. Whether it's through exercise, reading, or spending time with loved ones, I focus on keeping my mind and body in balance to be at my best every day.
       </>
     ), 
     icon: <Heart className="w-6 h-6 text-pink-400" /> 
@@ -166,7 +151,7 @@ export default function HHEP() {
               initial={{ opacity: 0, y: 50 }} // Animación de entrada
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-purple-900 bg-opacity-50 p-6 rounded-lg shadow-md hover:bg-purple-700 transition-all duration-300"
+              className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
             >
               <div className="flex items-center mb-4">
                 {habit.icon}
