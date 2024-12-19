@@ -54,7 +54,7 @@ export default function Certificates() {
                   />
                   <div className="mt-4 text-center">
                     <h3 className="text-xl font-semibold text-pink-300">{cert.name}</h3>
-                    <p className="text-gray-400">Year obtained: {cert.year}</p>
+                    <p className="text-gray-400">Year obtained: 2023-2024</p>
                   </div>
                 </div>
               ))}
