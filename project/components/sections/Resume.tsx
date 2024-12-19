@@ -14,7 +14,7 @@ const skills = [
   { name: 'DNS & DHCP Management', level: 80, icon: <Router className="w-6 h-6 text-indigo-500" /> },
   { name: 'Network Troubleshooting', level: 85, icon: <Cpu className="w-6 h-6 text-orange-400" /> },
   { name: 'Routing and Switching', level: 75, icon: <Router className="w-6 h-6 text-teal-500" /> },
-  { name: 'Virtualization (VMware, Hyper-V)', level: 70, icon: <Cloud className="w-6 h-6 text-gray-400" /> },
+  { name: 'Virtualization (VMware, Oracle VM)', level: 70, icon: <Cloud className="w-6 h-6 text-gray-400" /> },
 ]
 
 export default function Resume() {
