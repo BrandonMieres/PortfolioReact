@@ -1,7 +1,7 @@
 // **Imports y dependencias**
 import { motion } from 'framer-motion' // Animaciones
 import { useState } from 'react' // Hook de estado
-import { User, Target, CheckCircle, Repeat, Headphones, Users, Heart } from 'lucide-react' // Iconos
+import { User, Target, CheckCircle, Repeat, Headphones, Users, Heart, BookOpen, Star } from 'lucide-react' // Iconos
 
 // **Constante que contiene los hábitos**
 const hhepHabits = [
@@ -177,6 +177,69 @@ export default function HHEP() {
           ))}
         </div>
       </div>
+
+      {/* **Sección animada para el Mission Statement** */}
+      <motion.section
+        initial={{ opacity: 0, y: 100 }} // Animación inicial
+        animate={{ opacity: 1, y: 0 }} // Animación en pantalla
+        exit={{ opacity: 0, y: 100 }} // Animación al salir
+        transition={{ duration: 0.5 }} // Transición suave
+        className="space-y-8 mt-12"
+      >
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+          <h2 className="text-3xl font-semibold mb-6 text-pink-400">
+            My Mission Statement
+          </h2>
+
+          <div className="space-y-6">
+            {/* **Bloques de misión y valores** */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
+            >
+              <Heart className="w-6 h-6 text-pink-400" />
+              <div>
+                <h3 className="text-xl font-semibold text-pink-300">My Purpose</h3>
+                <p className="text-gray-300 mt-2">
+                  To live an authentic and purposeful life, supporting the people I care about, closing the cycles I start, and advancing toward a fulfilling life centered on what truly matters.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
+            >
+              <Star className="w-6 h-6 text-pink-400" />
+              <div>
+                <h3 className="text-xl font-semibold text-pink-300">My Vision</h3>
+                <p className="text-gray-300 mt-2">
+                  My journey in life would be an epic story like Dungeons and Dragons, set in a magical world of swords and spells, striving to find the answer to why I am there.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
+            >
+              <BookOpen className="w-6 h-6 text-pink-400" />
+              <div>
+                <h3 className="text-xl font-semibold text-pink-300">My Values</h3>
+                <p className="text-gray-300 mt-2">
+                  Organization, continuous learning, and balance in different dimensions of life.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </motion.section>
     </motion.section>
   )
 }
