@@ -1,9 +1,7 @@
-// **Imports y dependencias**
-import { motion } from 'framer-motion' // Animaciones
-import { useState } from 'react' // Hook de estado
-import { User, Target, CheckCircle, Repeat, Headphones, Users, Heart, BookOpen, Star } from 'lucide-react' // Iconos
+import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { User, Target, CheckCircle, Repeat, Headphones, Users, Heart, BookOpen, Star, ChevronLeft, ChevronRight } from 'lucide-react'
 
-// **Constante que contiene los hábitos**
 const hhepHabits = [
   { 
     name: 'Be Proactive', 
@@ -119,179 +117,169 @@ const hhepHabits = [
   },
 ]
 
-// **Componente principal**
-export default function HHEP() {
-  // **Hook de estado para controlar la expansión**
-  const [expandedHabit, setExpandedHabit] = useState<number | null>(null)
+const CarouselControls = ({ currentIndex, total, onPrevious, onNext }) => (
+  <div className="flex justify-center items-center gap-4 mt-4">
+    <button
+      onClick={onPrevious}
+      className="p-2 rounded-full bg-purple-500 hover:bg-purple-600 transition-colors"
+      aria-label="Previous slide"
+    >
+      <ChevronLeft className="w-6 h-6" />
+    </button>
+    <span className="text-gray-300">
+      {currentIndex + 1} / {total}
+    </span>
+    <button
+      onClick={onNext}
+      className="p-2 rounded-full bg-purple-500 hover:bg-purple-600 transition-colors"
+      aria-label="Next slide"
+    >
+      <ChevronRight className="w-6 h-6" />
+    </button>
+  </div>
+)
 
-  // **Función para alternar la vista de más información**
-  const toggleMoreInfo = (index: number) => {
-    setExpandedHabit(prev => (prev === index ? null : index)) 
-  }
+export default function HHEP() {
+  // State for each carousel
+  const [habitsIndex, setHabitsIndex] = useState(0)
+  const [missionIndex, setMissionIndex] = useState(0)
+  const [rocksIndex, setRocksIndex] = useState(0)
+
+  // Mission statement content
+  const missionContent = [
+    {
+      icon: <Heart className="w-6 h-6 text-pink-400" />,
+      title: "My Purpose",
+      content: "To live an authentic and purposeful life, supporting the people I care about, closing the cycles I start, and advancing toward a fulfilling life centered on what truly matters."
+    },
+    {
+      icon: <Star className="w-6 h-6 text-pink-400" />,
+      title: "My Vision",
+      content: "My journey in life would be an epic story like Dungeons and Dragons, set in a magical world of swords and spells, striving to find the answer to why I am there."
+    },
+    {
+      icon: <BookOpen className="w-6 h-6 text-pink-400" />,
+      title: "My Values",
+      content: "Organization, continuous learning, and balance in different dimensions of life."
+    }
+  ]
+
+  // Rocks, Pebbles, and Sand content
+  const rocksContent = [
+    {
+      icon: <CheckCircle className="w-6 h-6 text-pink-400" />,
+      title: "Rocks",
+      content: "My family and close friends are the fundamental pillar of my life. Sharing quality time, creating meaningful memories, and providing mutual support are my top priorities, as they strengthen the bonds that define who I am."
+    },
+    {
+      icon: <Users className="w-6 h-6 text-pink-400" />,
+      title: "Pebbles",
+      content: "The activities that enrich my day-to-day life, such as spending time with acquaintances, enjoying a good conversation, participating in social events, or simply enjoying quiet moments at home, are important to maintain balance."
+    },
+    {
+      icon: <Heart className="w-6 h-6 text-pink-400" />,
+      title: "Sand",
+      content: "The small daily distractions, such as checking social media, watching videos without a clear purpose, or procrastinating with minor tasks. Although they are part of the routine, I try to ensure they do not interfere with the time I dedicate to what really matters."
+    }
+  ]
 
   return (
-    // **Sección animada con Framer Motion**
     <motion.section
-      initial={{ opacity: 0, x: -100 }} // Animación inicial
-      animate={{ opacity: 1, x: 0 }} // Animación en pantalla
-      exit={{ opacity: 0, x: 100 }} // Animación al salir
-      transition={{ duration: 0.5 }} // Transición suave
+      initial={{ opacity: 0, x: -100 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: 100 }}
+      transition={{ duration: 0.5 }}
       className="space-y-8"
     >
+      {/* 7 Habits Carousel */}
       <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
         <h2 className="text-3xl font-semibold mb-6 text-pink-400">
           7 Habits of Highly Effective People
         </h2>
         
-        {/* **Grid de tarjetas con animación** */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {hhepHabits.map((habit, index) => (
-            <motion.div
-              key={habit.name}
-              initial={{ opacity: 0, y: 50 }} // Animación de entrada
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
-            >
-              <div className="flex items-center mb-4">
-                {habit.icon}
-                <h3 className="text-xl font-semibold text-pink-300 ml-2">
-                  {habit.name}
-                </h3>
-              </div>
-              <p className="text-gray-300 mb-4">{habit.description}</p>
-              
-              {/* **Mostrar más información si el hábito está expandido** */}
-              {expandedHabit === index && (
-                <p className="text-gray-200 mt-2">{habit.moreInfo}</p>
-              )}
+        <motion.div
+          key={habitsIndex}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.3 }}
+          className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md"
+        >
+          <div className="flex items-center mb-4">
+            {hhepHabits[habitsIndex].icon}
+            <h3 className="text-xl font-semibold text-pink-300 ml-2">
+              {hhepHabits[habitsIndex].name}
+            </h3>
+          </div>
+          <p className="text-gray-300 mb-4">{hhepHabits[habitsIndex].description}</p>
+          <p className="text-gray-200">{hhepHabits[habitsIndex].moreInfo}</p>
+        </motion.div>
 
-              {/* **Botón para alternar más información** */}
-              <button
-                onClick={() => toggleMoreInfo(index)}
-                className="text-pink-400 hover:text-pink-300 transition-all duration-200"
-              >
-                {expandedHabit === index ? 'Show less' : 'Learn more...'}
-              </button>
-            </motion.div>
-          ))}
-        </div>
+        <CarouselControls
+          currentIndex={habitsIndex}
+          total={hhepHabits.length}
+          onPrevious={() => setHabitsIndex((prev) => (prev - 1 + hhepHabits.length) % hhepHabits.length)}
+          onNext={() => setHabitsIndex((prev) => (prev + 1) % hhepHabits.length)}
+        />
       </div>
 
-      {/* **Sección animada para el Mission Statement** */}
-      <motion.section
-        initial={{ opacity: 0, y: 100 }} // Animación inicial
-        animate={{ opacity: 1, y: 0 }} // Animación en pantalla
-        exit={{ opacity: 0, y: 100 }} // Animación al salir
-        transition={{ duration: 0.5 }} // Transición suave
-        className="space-y-8 mt-12"
-      >
-        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
-          <h2 className="text-3xl font-semibold mb-6 text-pink-400">
-            My Mission Statement
-          </h2>
+      {/* Mission Statement Carousel */}
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+        <h2 className="text-3xl font-semibold mb-6 text-pink-400">
+          My Mission Statement
+        </h2>
 
-          <div className="space-y-6">
-            {/* **Bloques de misión y valores** */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
-            >
-              <Heart className="w-6 h-6 text-pink-400" />
-              <div>
-                <h3 className="text-xl font-semibold text-pink-300">My Purpose</h3>
-                <p className="text-gray-300 mt-2">
-                  To live an authentic and purposeful life, supporting the people I care about, closing the cycles I start, and advancing toward a fulfilling life centered on what truly matters.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
-            >
-              <Star className="w-6 h-6 text-pink-400" />
-              <div>
-                <h3 className="text-xl font-semibold text-pink-300">My Vision</h3>
-                <p className="text-gray-300 mt-2">
-                  My journey in life would be an epic story like Dungeons and Dragons, set in a magical world of swords and spells, striving to find the answer to why I am there.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
-            >
-              <BookOpen className="w-6 h-6 text-pink-400" />
-              <div>
-                <h3 className="text-xl font-semibold text-pink-300">My Values</h3>
-                <p className="text-gray-300 mt-2">
-                  Organization, continuous learning, and balance in different dimensions of life.
-                </p>
-              </div>
-            </motion.div>
+        <motion.div
+          key={missionIndex}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.3 }}
+          className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md"
+        >
+          {missionContent[missionIndex].icon}
+          <div>
+            <h3 className="text-xl font-semibold text-pink-300">{missionContent[missionIndex].title}</h3>
+            <p className="text-gray-300 mt-2">{missionContent[missionIndex].content}</p>
           </div>
-        </div>
-        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
-          <h2 className="text-3xl font-semibold mb-6 text-pink-400">
-            Rocks, Pebbles, and Sand
-          </h2>
+        </motion.div>
 
-          <div className="space-y-6">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
-            >
-              <CheckCircle className="w-6 h-6 text-pink-400" />
-              <div>
-                <h3 className="text-xl font-semibold text-pink-300">Rocks</h3>
-                <p className="text-gray-300 mt-2">
-                  My family and close friends are the fundamental pillar of my life. Sharing quality time, creating meaningful memories, and providing mutual support are my top priorities, as they strengthen the bonds that define who I am.
-                </p>
-              </div>
-            </motion.div>
+        <CarouselControls
+          currentIndex={missionIndex}
+          total={missionContent.length}
+          onPrevious={() => setMissionIndex((prev) => (prev - 1 + missionContent.length) % missionContent.length)}
+          onNext={() => setMissionIndex((prev) => (prev + 1) % missionContent.length)}
+        />
+      </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
-            >
-              <Users className="w-6 h-6 text-pink-400" />
-              <div>
-                <h3 className="text-xl font-semibold text-pink-300">Pebbles</h3>
-                <p className="text-gray-300 mt-2">
-                  The activities that enrich my day-to-day life, such as spending time with acquaintances, enjoying a good conversation, participating in social events, or simply enjoying quiet moments at home, are important to maintain balance.
-                </p>
-              </div>
-            </motion.div>
+      {/* Rocks, Pebbles, and Sand Carousel */}
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+        <h2 className="text-3xl font-semibold mb-6 text-pink-400">
+          Rocks, Pebbles, and Sand
+        </h2>
 
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
-            >
-              <Heart className="w-6 h-6 text-pink-400" />
-              <div>
-                <h3 className="text-xl font-semibold text-pink-300">Sand</h3>
-                <p className="text-gray-300 mt-2">
-                  The small daily distractions, such as checking social media, watching videos without a clear purpose, or procrastinating with minor tasks. Although they are part of the routine, I try to ensure they do not interfere with the time I dedicate to what really matters.
-                </p>
-              </div>
-            </motion.div>
+        <motion.div
+          key={rocksIndex}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.3 }}
+          className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md"
+        >
+          {rocksContent[rocksIndex].icon}
+          <div>
+            <h3 className="text-xl font-semibold text-pink-300">{rocksContent[rocksIndex].title}</h3>
+            <p className="text-gray-300 mt-2">{rocksContent[rocksIndex].content}</p>
           </div>
-        </div>
-      </motion.section>
+        </motion.div>
+
+        <CarouselControls
+          currentIndex={rocksIndex}
+          total={rocksContent.length}
+          onPrevious={() => setRocksIndex((prev) => (prev - 1 + rocksContent.length) % rocksContent.length)}
+          onNext={() => setRocksIndex((prev) => (prev + 1) % rocksContent.length)}
+        />
+      </div>
     </motion.section>
   )
 }
