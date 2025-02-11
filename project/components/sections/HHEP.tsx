@@ -239,6 +239,58 @@ export default function HHEP() {
             </motion.div>
           </div>
         </div>
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+          <h2 className="text-3xl font-semibold mb-6 text-pink-400">
+            Rocks, Pebbles, and Sand
+          </h2>
+
+          <div className="space-y-6">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
+            >
+              <CheckCircle className="w-6 h-6 text-pink-400" />
+              <div>
+                <h3 className="text-xl font-semibold text-pink-300">Rocks</h3>
+                <p className="text-gray-300 mt-2">
+                  My family and close friends are the fundamental pillar of my life. Sharing quality time, creating meaningful memories, and providing mutual support are my top priorities, as they strengthen the bonds that define who I am.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
+            >
+              <Users className="w-6 h-6 text-pink-400" />
+              <div>
+                <h3 className="text-xl font-semibold text-pink-300">Pebbles</h3>
+                <p className="text-gray-300 mt-2">
+                  The activities that enrich my day-to-day life, such as spending time with acquaintances, enjoying a good conversation, participating in social events, or simply enjoying quiet moments at home, are important to maintain balance.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="flex items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md hover:bg-purple-700 transition-all duration-300"
+            >
+              <Heart className="w-6 h-6 text-pink-400" />
+              <div>
+                <h3 className="text-xl font-semibold text-pink-300">Sand</h3>
+                <p className="text-gray-300 mt-2">
+                  The small daily distractions, such as checking social media, watching videos without a clear purpose, or procrastinating with minor tasks. Although they are part of the routine, I try to ensure they do not interfere with the time I dedicate to what really matters.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </motion.section>
     </motion.section>
   )
