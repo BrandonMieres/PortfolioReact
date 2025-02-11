@@ -24,14 +24,14 @@ export default function Portfolio() {
   }, [])
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-black to-purple-900 text-white font-sans">
+    <div className="relative min-h-screen bg-fixed bg-center bg-cover bg-topographic">
+      <div className="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
       <Navigation
         activeSection={activeSection}
         setActiveSection={setActiveSection}
         isScrolled={isScrolled}
       />
-
-      <main className="container mx-auto px-6 pt-24 pb-12">
+      <main className="container mx-auto px-6 pt-24 pb-12 relative z-10">
         <header className="text-center mb-12">
           <motion.h1
             initial={{ opacity: 0, y: -50 }}
@@ -62,6 +62,25 @@ export default function Portfolio() {
       </main>
 
       <Footer />
+
+      <style jsx>{`
+        .bg-topographic {
+          background-image: url('https://assets.codepen.io/319606/bg-topographic.svg');
+          background-attachment: fixed;
+          background-size: cover;
+          background-position: center;
+          animation: moveBackground 30s ease-in-out infinite alternate;
+        }
+
+        @keyframes moveBackground {
+          0% {
+            background-position: 0 0;
+          }
+          100% {
+            background-position: -300px -300px;
+          }
+        }
+      `}</style>
     </div>
   )
 }
