@@ -280,6 +280,32 @@ export default function HHEP() {
           onNext={() => setRocksIndex((prev) => (prev + 1) % rocksContent.length)}
         />
       </div>
+{/* Win-Win Situation Container */}
+<div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+  <h2 className="text-3xl font-semibold mb-6 text-pink-400">
+    My Win-Win Experience
+  </h2>
+
+  <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md">
+    <div className="flex items-start gap-4">
+      <Users className="w-6 h-6 text-pink-400" />
+      <div>
+        <h3 className="text-xl font-semibold text-pink-300">Resolving a Conflict in a Class Project</h3>
+        <p className="text-gray-300 mt-2">
+          In a group class project, we faced a problem: we couldn't agree on which approach to take. Some wanted to prioritize functionality and others design, which led us to waste time arguing without making progress.
+        </p>
+        <p className="text-gray-300 mt-2">
+          Instead of letting the conflict hold us back, I proposed dividing the work strategically. I suggested that we first define a basic functional structure, and once established, those who wanted to focus on design could improve it without affecting the logic. This way, everyone could work on what interested them without compromising the final result.
+        </p>
+        <p className="text-gray-300 mt-2">
+          Thanks to this, not only did we finish the project on time, but we also learned to leverage each other's strengths instead of arguing over different approaches. Since then, I always try to find solutions where everyone benefits in team projects.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     </motion.section>
   )
 }
