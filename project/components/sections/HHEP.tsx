@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
-import { User, Target, CheckCircle, Repeat, Headphones, Users, Heart, BookOpen, Star, ChevronLeft, ChevronRight } from 'lucide-react'
+import { User, Target, CheckCircle, Repeat, Headphones, Users, Heart, BookOpen, Star, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react'
 
 const hhepHabits = [
   { 
@@ -222,6 +222,32 @@ export default function HHEP() {
           onNext={() => setHabitsIndex((prev) => (prev + 1) % hhepHabits.length)}
         />
       </div>
+{/* Example Container of Being Proactive */}
+<div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+  <h2 className="text-3xl font-semibold mb-6 text-pink-400">
+    My Proactive Journey
+  </h2>
+
+  <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md">
+    <div className="flex items-start gap-4">
+      <User className="w-12 h-12 text-pink-400" />
+      <div className="space-y-6">
+        <h3 className="text-xl font-semibold text-pink-300">How I Stopped Procrastinating and Started Acting</h3>
+        <p className="text-gray-300 mt-2">
+          There was a time in my life when I realized I was always putting things off. I would say "I'll do it tomorrow," but tomorrow never came. This procrastination was holding me back and making me feel like I was losing control of my life.
+        </p>
+        <p className="text-gray-300 mt-2">
+          It was then that I decided I no longer wanted to live waiting for the perfect moment. I knew that if I didn't start now, I never would. So I began to face things as they came, one by one. No matter how small the step, I just wanted to move forward.
+        </p>
+        <p className="text-gray-300 mt-2">
+          Over time, I realized that the key was not to wait for the "ideal moment," but simply to take action. It was a mental shift that allowed me to own my time and solve problems as they arose, rather than letting them pile up. Now, when something isn't right, I prefer to do something, even if it's small, rather than keep putting it off.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
       {/* Mission Statement Carousel */}
       <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
@@ -288,18 +314,52 @@ export default function HHEP() {
 
   <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md">
     <div className="flex items-start gap-4">
-      <Users className="w-6 h-6 text-pink-400" />
+      <Users className="w-12 h-12 text-pink-400" />
       <div>
-        <h3 className="text-xl font-semibold text-pink-300">Resolving a Conflict in a Class Project</h3>
-        <p className="text-gray-300 mt-2">
-          In a group class project, we faced a problem: we couldn't agree on which approach to take. Some wanted to prioritize functionality and others design, which led us to waste time arguing without making progress.
-        </p>
-        <p className="text-gray-300 mt-2">
-          Instead of letting the conflict hold us back, I proposed dividing the work strategically. I suggested that we first define a basic functional structure, and once established, those who wanted to focus on design could improve it without affecting the logic. This way, everyone could work on what interested them without compromising the final result.
-        </p>
-        <p className="text-gray-300 mt-2">
-          Thanks to this, not only did we finish the project on time, but we also learned to leverage each other's strengths instead of arguing over different approaches. Since then, I always try to find solutions where everyone benefits in team projects.
-        </p>
+      <h3 className="text-2xl font-semibold text-pink-300">Resolving a Conflict in a Class Project</h3>
+      <p className="text-gray-300 mt-4">
+        In a group class project, we faced a problem: we couldn't agree on which approach to take. Some wanted to prioritize functionality and others design, which led us to waste time arguing without making progress.
+      </p>
+      <p className="text-gray-300 mt-4">
+        Instead of letting the conflict hold us back, I proposed dividing the work strategically. I suggested that we first define a basic functional structure, and once established, those who wanted to focus on design could improve it without affecting the logic. This way, everyone could work on what interested them without compromising the final result.
+      </p>
+      <p className="text-gray-300 mt-4">
+        Thanks to this, not only did we finish the project on time, but we also learned to leverage each other's strengths instead of arguing over different approaches. Since then, I always try to find solutions where everyone benefits in team projects.
+      </p>
+      </div>
+    </div>
+  </div>
+</div>
+{/* Empathetic Words Container */}
+<div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+  <h2 className="text-3xl font-semibold mb-6 text-pink-400">
+    Empathetic Words That Made a Difference
+  </h2>
+
+  <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md">
+    <div className="flex items-start gap-4">
+      <MessageCircle className="w-6 h-6 text-pink-400" />
+      <div className="space-y-6">
+        <div>
+          <h3 className="text-xl font-semibold text-pink-300">Words of Understanding</h3>
+          <p className="text-gray-300 mt-2 italic">
+            "I understand how difficult this situation can be, and it's completely normal to feel overwhelmed. Let's talk it through together and we'll get through it."
+          </p>
+        </div>
+        
+        <div>
+          <h3 className="text-xl font-semibold text-pink-300">Support for Growth</h3>
+          <p className="text-gray-300 mt-2 italic">
+            "Remember that making mistakes is part of learning. The important thing is not the fall, but how we get up and what we learn from it."
+          </p>
+        </div>
+        
+        <div>
+          <h3 className="text-xl font-semibold text-pink-300">Positive Perspective</h3>
+          <p className="text-gray-300 mt-2 italic">
+            "Sometimes what seems like a step back today can be what prepares you for something much better tomorrow. The important thing is that we learn from all of this."
+          </p>
+        </div>
       </div>
     </div>
   </div>
