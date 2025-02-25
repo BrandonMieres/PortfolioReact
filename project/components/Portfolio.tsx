@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Head from 'next/head'
 import Navigation from './layout/Navigation'
 import About from './sections/About'
 import Resume from './sections/Resume'
@@ -25,6 +26,11 @@ export default function Portfolio() {
 
   return (
     <>
+      {/* Favicon */}
+      <Head>
+        <link rel="icon" href="/b.webp" type="image/webp" />
+      </Head>
+
       {/* Fondo topográfico separado */}
       <div className="bg-topographic"></div>
 
