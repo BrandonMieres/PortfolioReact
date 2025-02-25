@@ -28,7 +28,7 @@ export default function Portfolio() {
     <>
       {/* Favicon */}
       <Head>
-        <link rel="icon" href="/b.webp" type="image/webp" />
+        <link rel="icon" href="/img/b.webp" type="image/webp" />
       </Head>
 
       {/* Fondo topográfico separado */}
