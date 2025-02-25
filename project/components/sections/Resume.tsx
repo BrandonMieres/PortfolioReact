@@ -1,7 +1,7 @@
 'use client'
 
-import React from 'react'
-import { motion } from 'framer-motion'
+import React, { useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
 import { Download, Server, Shield, Wifi, Router, Cloud, Lock, Cpu } from 'lucide-react'
 
 const skills = [
@@ -14,99 +14,277 @@ const skills = [
   { name: 'DNS & DHCP Management', level: 80, icon: <Router className="w-6 h-6 text-indigo-500" /> },
   { name: 'Network Troubleshooting', level: 85, icon: <Cpu className="w-6 h-6 text-orange-400" /> },
   { name: 'Routing and Switching', level: 75, icon: <Router className="w-6 h-6 text-teal-500" /> },
-  { name: 'Virtualization (VMware, Oracle VM)', level: 70, icon: <Cloud className="w-6 h-6 text-gray-400" /> },
+  { name: 'Virtualization (VMware, Hyper-V)', level: 70, icon: <Cloud className="w-6 h-6 text-gray-400" /> },
 ]
 
 export default function Resume() {
+  const [activeSection, setActiveSection] = useState('skills')
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+      opacity: 1,
+      transition: { 
+        staggerChildren: 0.1 
+      } 
+    }
+  }
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  }
+
   return (
     <motion.section
       key="resume"
-      initial={{ opacity: 0, x: -100 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 100 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="space-y-8"
+      className="relative"
     >
-      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
-        <div className="flex justify-between items-center mb-6">
-          <h2 className="text-3xl font-semibold text-pink-400">Resume</h2>
-          <a
+      {/* Decorative Futuristic Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-0 w-32 h-32 bg-purple-500 opacity-10 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 right-0 w-64 h-64 bg-pink-500 opacity-10 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        <motion.div 
+          className="absolute top-1/4 right-1/4 w-2 h-2 bg-purple-400 rounded-full"
+          animate={{ 
+            scale: [1, 2, 1],
+            opacity: [0.7, 1, 0.7]
+          }}
+          transition={{ 
+            duration: 3,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        <motion.div 
+          className="absolute bottom-1/3 left-1/3 w-1 h-20 bg-gradient-to-b from-purple-500 to-transparent"
+          animate={{ 
+            height: [20, 40, 20],
+            opacity: [0.5, 0.8, 0.5]
+          }}
+          transition={{ 
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+
+      <div className="bg-black bg-opacity-90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-purple-500/50 relative z-10 overflow-hidden">
+        {/* Animated border effect */}
+        <div className="absolute inset-px rounded-2xl overflow-hidden pointer-events-none">
+          <div className="absolute inset-0 bg-gradient-to-r from-gray-700/0 via-gray-700/30 to-gray-700/0 animate-pulse"></div>
+          <motion.div 
+            className="absolute -inset-1 bg-gradient-to-r from-gray-800 to-gray-900 opacity-30"
+            animate={{
+              backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+            }}
+            transition={{
+              duration: 15,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+            style={{
+              backgroundSize: '200% 200%',
+            }}
+          />
+        </div>
+
+        <div className="flex justify-between items-center mb-8">
+          <motion.h2 
+            className="text-4xl font-bold text-white"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <span className="relative">
+              RESUME
+              <motion.span 
+                className="absolute -bottom-1 left-0 h-1 bg-gradient-to-r from-purple-400 to-pink-400"
+                initial={{ width: 0 }}
+                animate={{ width: '100%' }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              />
+            </span>
+          </motion.h2>
+          <motion.a
             href="/MyCV.pdf"
             download
-            className="flex items-center px-4 py-2 bg-pink-600 text-white rounded-full hover:bg-pink-700 transition-colors duration-300"
+            className="group flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 relative overflow-hidden"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <Download className="w-5 h-5 mr-2" />
-            Download PDF
-          </a>
+            <span className="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+            <Download className="w-5 h-5 mr-2 relative z-10" />
+            <span className="relative z-10">Download CV</span>
+          </motion.a>
         </div>
-        <div className="space-y-6">
-          <div>
-            <h3 className="text-2xl font-semibold mb-2 text-purple-400">Education</h3>
-            <ul className="space-y-2">
-              <li>
-                <h4 className="text-xl font-semibold text-pink-300">Higher Technician in Computer Network Systems Management</h4>
-                <p className="text-gray-400">INS:Sapalomera Blanes | 2022 - 2025</p>
-              </li>
-              <li>
-                <h4 className="text-xl font-semibold text-pink-300">Technician in Microcomputer Systems and Networks</h4>
-                <p className="text-gray-400">INS:Freta Calella| 2020 - 2022</p>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold mb-2 text-purple-400">Knowledge & Skills</h3>
-            <ul className="space-y-4">
-              <li>
-                <h4 className="text-xl font-semibold text-pink-300">Network Configuration & Management</h4>
-                <p className="text-gray-400">Extensive knowledge in configuring and managing both local and wide area networks (LAN/WAN).</p>
-              </li>
-              <li>
-                <h4 className="text-xl font-semibold text-pink-300">Firewall & VPN Configuration</h4>
-                <p className="text-gray-400">Expertise in setting up and managing firewalls and VPNs for secure remote access and protection against cyber threats.</p>
-              </li>
-              <li>
-                <h4 className="text-xl font-semibold text-pink-300">Troubleshooting & Diagnostics</h4>
-                <p className="text-gray-400">Skilled in identifying and resolving issues related to network connectivity, hardware malfunctions, and system errors.</p>
-              </li>
-              <li>
-                <h4 className="text-xl font-semibold text-pink-300">Server Administration</h4>
-                <p className="text-gray-400">In-depth knowledge of managing and maintaining servers, including Windows and Linux-based systems.</p>
-              </li>
-              <li>
-                <h4 className="text-xl font-semibold text-pink-300">Virtualization Technologies</h4>
-                <p className="text-gray-400">Experience in virtualization technologies like VMware and Hyper-V for efficient resource management and system scalability.</p>
-              </li>
-              <li>
-                <h4 className="text-xl font-semibold text-pink-300">Network Security & Protocols</h4>
-                <p className="text-gray-400">Proficient in securing networks, configuring security protocols, and ensuring compliance with security standards.</p>
-              </li>
-            </ul>
-          </div>
-          <div>
-            <h3 className="text-2xl font-semibold mb-2 text-purple-400">Skills</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {skills.map((skill) => (
-                <div key={skill.name} className="space-y-2">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      {skill.icon}
-                      <span className="ml-2 text-gray-300">{skill.name}</span>
+
+        {/* Navigation Tabs */}
+        <div className="flex mb-6 space-x-1 bg-black p-1 rounded-full justify-center md:justify-start">
+          {['skills', 'education', 'knowledge'].map((section) => (
+            <motion.button
+              key={section}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                activeSection === section 
+                  ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg' 
+                  : 'text-gray-400 hover:text-white'
+              }`}
+              onClick={() => setActiveSection(section)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {section.charAt(0).toUpperCase() + section.slice(1)}
+            </motion.button>
+          ))}
+        </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeSection}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="min-h-80"
+          >
+            {activeSection === 'skills' && (
+              <motion.div 
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+              >
+                {skills.map((skill) => (
+                  <motion.div key={skill.name} variants={itemVariants} className="group">
+                    <div className="p-4 rounded-xl bg-black border border-purple-500/20 hover:border-pink-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/10">
+                      <div className="flex items-center justify-between mb-3">
+                        <div className="flex items-center">
+                          <motion.div 
+                            whileHover={{ rotate: 360 }}
+                            transition={{ duration: 0.5 }}
+                            className="mr-3"
+                          >
+                            {skill.icon}
+                          </motion.div>
+                          <span className="text-gray-300 font-medium">{skill.name}</span>
+                        </div>
+                        <span className="text-pink-400 font-bold">{skill.level}%</span>
+                      </div>
+                      <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
+                        <motion.div
+                          className="h-full rounded-full bg-gradient-to-r from-purple-600 to-pink-600 relative"
+                          initial={{ width: 0 }}
+                          animate={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-pulse"></div>
+                        </motion.div>
+                      </div>
                     </div>
-                    <span className="text-pink-400">{skill.level}%</span>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+
+            {activeSection === 'education' && (
+              <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="space-y-6"
+              >
+                <motion.div variants={itemVariants} className="relative">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full"></div>
+                  <div className="ml-6 p-6 rounded-xl bg-black border border-purple-500/20 hover:border-pink-500/50 transition-all duration-300">
+                    <h4 className="text-xl font-bold text-white">Higher Technician in Computer Network Systems Management</h4>
+                    <p className="text-gray-400 mt-2 flex items-center">
+                      <span className="inline-block w-3 h-3 rounded-full bg-purple-500 mr-2"></span>
+                      INS:Sapalomera Blanes | 2022 - 2025
+                    </p>
+                    <div className="mt-3 h-0.5 w-full bg-gradient-to-r from-purple-500/20 to-transparent"></div>
                   </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2.5">
-                    <motion.div
-                      className="bg-gradient-to-r from-purple-600 to-pink-600 h-2.5 rounded-full"
-                      initial={{ width: 0 }}
-                      animate={{ width: `${skill.level}%` }}
-                      transition={{ duration: 1, ease: "easeOut" }}
-                    />
+                </motion.div>
+                
+                <motion.div variants={itemVariants} className="relative">
+                  <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-600 to-pink-600 rounded-full"></div>
+                  <div className="ml-6 p-6 rounded-xl bg-black border border-purple-500/20 hover:border-pink-500/50 transition-all duration-300">
+                    <h4 className="text-xl font-bold text-white">Technician in Microcomputer Systems and Networks</h4>
+                    <p className="text-gray-400 mt-2 flex items-center">
+                      <span className="inline-block w-3 h-3 rounded-full bg-purple-500 mr-2"></span>
+                      INS:Freta Calella | 2020 - 2022
+                    </p>
+                    <div className="mt-3 h-0.5 w-full bg-gradient-to-r from-purple-500/20 to-transparent"></div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+                </motion.div>
+              </motion.div>
+            )}
+
+            {activeSection === 'knowledge' && (
+              <motion.div 
+                variants={containerVariants}
+                initial="hidden"
+                animate="visible"
+                className="grid grid-cols-1 md:grid-cols-2 gap-6"
+              >
+                {[
+                  {
+                    title: "Network Configuration & Management",
+                    desc: "Extensive knowledge in configuring and managing both local and wide area networks (LAN/WAN).",
+                    icon: <Wifi className="w-6 h-6 text-purple-400" />
+                  },
+                  {
+                    title: "Firewall & VPN Configuration",
+                    desc: "Expertise in setting up and managing firewalls and VPNs for secure remote access and protection against cyber threats.",
+                    icon: <Shield className="w-6 h-6 text-pink-400" />
+                  },
+                  {
+                    title: "Troubleshooting & Diagnostics",
+                    desc: "Skilled in identifying and resolving issues related to network connectivity, hardware malfunctions, and system errors.",
+                    icon: <Cpu className="w-6 h-6 text-indigo-400" />
+                  },
+                  {
+                    title: "Server Administration",
+                    desc: "In-depth knowledge of managing and maintaining servers, including Windows and Linux-based systems.",
+                    icon: <Server className="w-6 h-6 text-blue-400" />
+                  },
+                  {
+                    title: "Virtualization Technologies",
+                    desc: "Experience in virtualization technologies like VMware and Hyper-V for efficient resource management and system scalability.",
+                    icon: <Cloud className="w-6 h-6 text-gray-400" />
+                  },
+                  {
+                    title: "Network Security & Protocols",
+                    desc: "Proficient in securing networks, configuring security protocols, and ensuring compliance with security standards.",
+                    icon: <Lock className="w-6 h-6 text-yellow-400" />
+                  }
+                ].map((item, index) => (
+                  <motion.div key={index} variants={itemVariants}>
+                    <div className="p-6 rounded-xl bg-black border border-purple-500/20 hover:border-pink-500/50 transition-all duration-300 h-full group hover:bg-black">
+                      <motion.div 
+                        className="mb-4 p-3 rounded-full bg-purple-900/30 inline-block"
+                        whileHover={{ rotate: 360 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        {item.icon}
+                      </motion.div>
+                      <h4 className="text-xl font-bold mb-2 text-white group-hover:text-pink-300 transition-all duration-300">
+                        {item.title}
+                      </h4>
+                      <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </motion.div>
+            )}
+          </motion.div>
+        </AnimatePresence>
       </div>
     </motion.section>
   )
