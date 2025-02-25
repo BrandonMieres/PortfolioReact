@@ -34,8 +34,8 @@ export default function Certificates() {
       transition={{ duration: 0.7, ease: "easeOut" }}
       className="py-12 px-4 md:px-8 lg:px-16"
     >
-      <div className="bg-gradient-to-br from-gray-900 via-purple-900 to-black bg-opacity-90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-purple-600 hover:border-pink-600 transition-all duration-500 max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse">
+      <div className="bg-gradient-to-br from-black to-purple-800 bg-opacity-90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-purple-600 hover:border-pink-600 transition-all duration-500 max-w-4xl mx-auto">
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse leading-tight py-2">
           My Certificates
         </h2>
         <div className="relative max-w-2xl mx-auto">
