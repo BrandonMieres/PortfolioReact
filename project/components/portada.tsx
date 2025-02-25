@@ -231,7 +231,7 @@ export default function Portada() {
           left: -100%;
           width: 300%;
           height: 500%;
-          background-image: url('https://assets.codepen.io/319606/bg-topographic.svg');
+          background-image: url('/bg-topographic.svg');
           background-size: 2000px;
           background-position: center;
           opacity: 0.5;
