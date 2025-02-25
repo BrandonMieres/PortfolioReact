@@ -3,117 +3,117 @@ import { useState } from 'react'
 import { User, Target, CheckCircle, Repeat, Headphones, Users, Heart, BookOpen, Star, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react'
 
 const hhepHabits = [
-  { 
-    name: 'Be Proactive', 
+  {
+    name: 'Be Proactive',
     description: (
       <>
         Take <span className="text-purple-500">responsibility</span> for your{' '}
         <span className="text-purple-500">reactions</span> and{' '}
         <span className="text-purple-500">behaviors</span>.
       </>
-    ), 
+    ),
     moreInfo: (
       <>
         I apply this habit by always trying to take control of my actions. When something goes wrong, I try to understand what I could have done differently, rather than blaming external factors.
       </>
-    ), 
-    icon: <User className="w-6 h-6 text-pink-400" /> 
+    ),
+    icon: <User className="w-6 h-6 text-pink-400" />
   },
-  
-  { 
-    name: 'Begin with the End in Mind', 
+
+  {
+    name: 'Begin with the End in Mind',
     description: (
       <>
         <span className="text-purple-500">Define</span> a clear vision of your{' '}
         <span className="text-purple-500">desired outcomes</span>.
       </>
-    ), 
+    ),
     moreInfo: (
       <>
         Before starting any project or task, I always take a moment to visualize the end result I want to achieve. This helps me stay focused and motivated to reach that goal, whether it's a professional task or a personal achievement.
       </>
-    ), 
-    icon: <Target className="w-6 h-6 text-pink-400" /> 
+    ),
+    icon: <Target className="w-6 h-6 text-pink-400" />
   },
-  
-  { 
-    name: 'Put First Things First', 
+
+  {
+    name: 'Put First Things First',
     description: (
       <>
         <span className="text-purple-500">Prioritize</span> important tasks over urgent but{' '}
         <span className="text-purple-500">less important</span> ones.
       </>
-    ), 
+    ),
     moreInfo: (
       <>
         I apply this habit by carefully prioritizing my day. I always focus on what will bring the most value in the long term, rather than being overwhelmed by tasks that seem urgent but are not as important.
       </>
-    ), 
-    icon: <CheckCircle className="w-6 h-6 text-pink-400" /> 
+    ),
+    icon: <CheckCircle className="w-6 h-6 text-pink-400" />
   },
-  
-  { 
-    name: 'Think Win-Win', 
+
+  {
+    name: 'Think Win-Win',
     description: (
       <>
         Seek mutually beneficial <span className="text-purple-500">solutions</span> in{' '}
         <span className="text-purple-500">relationships</span> and <span className="text-purple-500">business</span>.
       </>
-    ), 
+    ),
     moreInfo: (
       <>
         I use this habit to approach both personal and professional relationships with a mindset of collaboration. I always look for ways that both sides can benefit from any agreement or partnership, rather than focusing on individual gain.
       </>
-    ), 
-    icon: <Users className="w-6 h-6 text-pink-400" /> 
+    ),
+    icon: <Users className="w-6 h-6 text-pink-400" />
   },
-  
-  { 
-    name: 'Seek First to Understand, Then to Be Understood', 
+
+  {
+    name: 'Seek First to Understand, Then to Be Understood',
     description: (
       <>
         <span className="text-purple-500">Listen</span> actively before expressing your own{' '}
         <span className="text-purple-500">point of view</span>.
       </>
-    ), 
+    ),
     moreInfo: (
       <>
         In my personal life, I strive to listen fully before jumping to conclusions. This habit helps me better understand others' perspectives and respond with empathy, which strengthens my relationships.
       </>
-    ), 
-    icon: <Headphones className="w-6 h-6 text-pink-400" /> 
+    ),
+    icon: <Headphones className="w-6 h-6 text-pink-400" />
   },
-  
-  { 
-    name: 'Synergize', 
+
+  {
+    name: 'Synergize',
     description: (
       <>
         <span className="text-purple-500">Combine</span> strengths through teamwork and{' '}
         <span className="text-purple-500">collaboration</span>.
       </>
-    ), 
+    ),
     moreInfo: (
       <>
         In my work and personal life, I often look for opportunities to collaborate with others. I recognize that by combining our strengths, we can achieve much better results than if we work alone.
       </>
-    ), 
-    icon: <Repeat className="w-6 h-6 text-pink-400" /> 
+    ),
+    icon: <Repeat className="w-6 h-6 text-pink-400" />
   },
-  
-  { 
-    name: 'Sharpen the Saw', 
+
+  {
+    name: 'Sharpen the Saw',
     description: (
       <>
         <span className="text-purple-500">Renew</span> yourself physically, mentally, emotionally, and{' '}
         <span className="text-purple-500">spiritually</span>.
       </>
-    ), 
+    ),
     moreInfo: (
       <>
         I make sure to take time for myself regularly. Whether it's through exercise, reading, or spending time with loved ones, I focus on keeping my mind and body in balance to be at my best every day.
       </>
-    ), 
-    icon: <Heart className="w-6 h-6 text-pink-400" /> 
+    ),
+    icon: <Heart className="w-6 h-6 text-pink-400" />
   },
 ]
 
@@ -196,7 +196,7 @@ export default function HHEP() {
         <h2 className="text-3xl font-semibold mb-6 text-pink-400">
           7 Habits of Highly Effective People
         </h2>
-        
+
         <motion.div
           key={habitsIndex}
           initial={{ opacity: 0, x: 50 }}
@@ -222,30 +222,30 @@ export default function HHEP() {
           onNext={() => setHabitsIndex((prev) => (prev + 1) % hhepHabits.length)}
         />
       </div>
-{/* Example Container of Being Proactive */}
-<div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
-  <h2 className="text-3xl font-semibold mb-6 text-pink-400">
-    My Proactive Journey
-  </h2>
+      {/* Example Container of Being Proactive */}
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+        <h2 className="text-3xl font-semibold mb-6 text-pink-400">
+          My Proactive Journey
+        </h2>
 
-  <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md">
-    <div className="flex items-start gap-4">
-      <User className="w-12 h-12 text-pink-400" />
-      <div className="space-y-6">
-        <h3 className="text-xl font-semibold text-pink-300">How I Stopped Procrastinating and Started Acting</h3>
-        <p className="text-gray-300 mt-2">
-          There was a time in my life when I realized I was always putting things off. I would say "I'll do it tomorrow," but tomorrow never came. This procrastination was holding me back and making me feel like I was losing control of my life.
-        </p>
-        <p className="text-gray-300 mt-2">
-          It was then that I decided I no longer wanted to live waiting for the perfect moment. I knew that if I didn't start now, I never would. So I began to face things as they came, one by one. No matter how small the step, I just wanted to move forward.
-        </p>
-        <p className="text-gray-300 mt-2">
-          Over time, I realized that the key was not to wait for the "ideal moment," but simply to take action. It was a mental shift that allowed me to own my time and solve problems as they arose, rather than letting them pile up. Now, when something isn't right, I prefer to do something, even if it's small, rather than keep putting it off.
-        </p>
+        <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md">
+          <div className="flex items-start gap-4">
+            <User className="w-12 h-12 text-pink-400" />
+            <div className="space-y-6">
+              <h3 className="text-xl font-semibold text-pink-300">How I Stopped Procrastinating and Started Acting</h3>
+              <p className="text-gray-300 mt-2">
+                There was a time in my life when I realized I was always putting things off. I would say "I'll do it tomorrow," but tomorrow never came. This procrastination was holding me back and making me feel like I was losing control of my life.
+              </p>
+              <p className="text-gray-300 mt-2">
+                It was then that I decided I no longer wanted to live waiting for the perfect moment. I knew that if I didn't start now, I never would. So I began to face things as they came, one by one. No matter how small the step, I just wanted to move forward.
+              </p>
+              <p className="text-gray-300 mt-2">
+                Over time, I realized that the key was not to wait for the "ideal moment," but simply to take action. It was a mental shift that allowed me to own my time and solve problems as they arose, rather than letting them pile up. Now, when something isn't right, I prefer to do something, even if it's small, rather than keep putting it off.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</div>
 
 
 
@@ -306,66 +306,64 @@ export default function HHEP() {
           onNext={() => setRocksIndex((prev) => (prev + 1) % rocksContent.length)}
         />
       </div>
-{/* Win-Win Situation Container */}
-<div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
-  <h2 className="text-3xl font-semibold mb-6 text-pink-400">
-    My Win-Win Experience
-  </h2>
+      {/* Win-Win Situation Container */}
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+        <h2 className="text-3xl font-semibold mb-6 text-pink-400">
+          My Win-Win Experience
+        </h2>
 
-  <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md">
-    <div className="flex items-start gap-4">
-      <Users className="w-12 h-12 text-pink-400" />
-      <div>
-      <h3 className="text-2xl font-semibold text-pink-300">Resolving a Conflict in a Class Project</h3>
-      <p className="text-gray-300 mt-4">
-        In a group class project, we faced a problem: we couldn't agree on which approach to take. Some wanted to prioritize functionality and others design, which led us to waste time arguing without making progress.
-      </p>
-      <p className="text-gray-300 mt-4">
-        Instead of letting the conflict hold us back, I proposed dividing the work strategically. I suggested that we first define a basic functional structure, and once established, those who wanted to focus on design could improve it without affecting the logic. This way, everyone could work on what interested them without compromising the final result.
-      </p>
-      <p className="text-gray-300 mt-4">
-        Thanks to this, not only did we finish the project on time, but we also learned to leverage each other's strengths instead of arguing over different approaches. Since then, I always try to find solutions where everyone benefits in team projects.
-      </p>
-      </div>
-    </div>
-  </div>
-</div>
-{/* Empathetic Words Container */}
-<div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
-  <h2 className="text-3xl font-semibold mb-6 text-pink-400">
-    Empathetic Words That Made a Difference
-  </h2>
-
-  <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md">
-    <div className="flex items-start gap-4">
-      <MessageCircle className="w-6 h-6 text-pink-400" />
-      <div className="space-y-6">
-        <div>
-          <h3 className="text-xl font-semibold text-pink-300">Words of Understanding</h3>
-          <p className="text-gray-300 mt-2 italic">
-            "I understand how difficult this situation can be, and it's completely normal to feel overwhelmed. Let's talk it through together and we'll get through it."
-          </p>
-        </div>
-        
-        <div>
-          <h3 className="text-xl font-semibold text-pink-300">Support for Growth</h3>
-          <p className="text-gray-300 mt-2 italic">
-            "Remember that making mistakes is part of learning. The important thing is not the fall, but how we get up and what we learn from it."
-          </p>
-        </div>
-        
-        <div>
-          <h3 className="text-xl font-semibold text-pink-300">Positive Perspective</h3>
-          <p className="text-gray-300 mt-2 italic">
-            "Sometimes what seems like a step back today can be what prepares you for something much better tomorrow. The important thing is that we learn from all of this."
-          </p>
+        <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md">
+          <div className="flex items-start gap-4">
+            <Users className="w-12 h-12 text-pink-400" />
+            <div>
+              <h3 className="text-2xl font-semibold text-pink-300">Resolving a Conflict in a Class Project</h3>
+              <p className="text-gray-300 mt-4">
+                In a group class project, we faced a problem: we couldn't agree on which approach to take. Some wanted to prioritize functionality and others design, which led us to waste time arguing without making progress.
+              </p>
+              <p className="text-gray-300 mt-4">
+                Instead of letting the conflict hold us back, I proposed dividing the work strategically. I suggested that we first define a basic functional structure, and once established, those who wanted to focus on design could improve it without affecting the logic. This way, everyone could work on what interested them without compromising the final result.
+              </p>
+              <p className="text-gray-300 mt-4">
+                Thanks to this, not only did we finish the project on time, but we also learned to leverage each other's strengths instead of arguing over different approaches. Since then, I always try to find solutions where everyone benefits in team projects.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+      {/* Empathetic Words Container */}
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+        <h2 className="text-3xl font-semibold mb-6 text-pink-400">
+          Empathetic Words That Made a Difference
+        </h2>
 
+        <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-6 rounded-lg border border-purple-400 shadow-md">
+          <div className="flex items-start gap-4">
+        <MessageCircle className="w-10 h-10 text-pink-400" />
+        <div className="space-y-6">
+          <div>
+            <h3 className="text-xl font-semibold text-pink-300">Words of Understanding</h3>
+            <p className="text-gray-300 mt-2 italic">
+          "I understand how difficult this situation can be, and it's completely normal to feel overwhelmed. Let's talk together and we'll get through it."
+            </p>
+          </div>
 
+          <div>
+            <h3 className="text-xl font-semibold text-pink-300">Support for Growth</h3>
+            <p className="text-gray-300 mt-2 italic">
+          "Making mistakes is totally normal; it's part of the learning journey. What matters is how you get up and what you take from each experience. What do you think you could do today to turn a stumble into an opportunity?"
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold text-pink-300">Positive Perspective</h3>
+            <p className="text-gray-300 mt-2 italic">
+          "Sometimes, what seems like a step back today is actually the push we needed to discover something amazing. Every experience opens new doors and invites us to see life from another perspective. What step could you take today to focus on the positive?"
+            </p>
+          </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </motion.section>
   )
 }
