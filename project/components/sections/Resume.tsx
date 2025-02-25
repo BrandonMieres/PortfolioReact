@@ -79,7 +79,7 @@ export default function Resume() {
         <div className="absolute inset-px rounded-2xl overflow-hidden pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-r from-gray-700/0 via-gray-700/30 to-gray-700/0 animate-pulse"></div>
           <motion.div 
-            className="absolute -inset-1 bg-gradient-to-r from-gray-800 to-gray-900 opacity-30"
+            className="absolute -inset-1 bg-gradient-to-r from-gray-1000 to-gray-900 opacity-30"
             animate={{
               backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
             }}
