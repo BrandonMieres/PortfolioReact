@@ -26,10 +26,6 @@ export default function Portfolio() {
 
   return (
     <>
-      {/* Favicon */}
-      <Head>
-        <link rel="icon" href="/img/b.webp" type="image/webp" />
-      </Head>
 
       {/* Fondo topográfico separado */}
       <div className="bg-topographic"></div>
