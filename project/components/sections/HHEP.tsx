@@ -71,7 +71,7 @@ export default function Portfolio() {
         <Footer />
       </div>
 
-      <style jsx global>{`
+<style jsx global>{`
   html, body {
     margin: 0;
     padding: 0;
