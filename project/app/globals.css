@@ -17,8 +17,17 @@ body {
     rgb(var(--background-end-rgb))
   );
 }
+.text-purple-400 {
+  color: #9d4edd;
+}
 .glass {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   border: 1px solid #9d4edd; /* Purple border color */
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap');
+
+body {
+  font-family: 'Exo', sans-serif;
 }
