@@ -31,13 +31,18 @@ export default function Certificates() {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: -50 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className="py-12 px-4 md:px-8 lg:px-16"
     >
-      <div className="bg-gradient-to-br from-black to-purple-800 bg-opacity-90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-purple-600 hover:border-pink-600 transition-all duration-500 max-w-4xl mx-auto">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-purple-500 animate-pulse leading-tight py-2">
+      <div className="glass p-8 rounded-2xl shadow-2xl hover:shadow-3xl transition-all duration-500 max-w-4xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-4xl md:text-5xl font-bold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400"
+        >
           My Certificates
-        </h2>
+        </motion.h2>
         <div className="relative max-w-2xl mx-auto">
           <div className="overflow-hidden rounded-lg shadow-lg">
             <motion.div
@@ -46,35 +51,49 @@ export default function Certificates() {
               animate={{ x: `-${currentCertificate * 100}%` }}
             >
               {certificates.map((cert, index) => (
-                <div key={cert.name} className="w-full flex-shrink-0">
-                  <Image
-                    src={cert.image}
-                    alt={cert.name}
-                    width={600}
-                    height={400}
-                    className="rounded-lg mx-auto transform hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="mt-6 text-center">
-                    <h3 className="text-2xl font-semibold text-pink-300 drop-shadow-md">
+                <motion.div
+                  key={cert.name}
+                  className="w-full flex-shrink-0 relative"
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: 0.1 * index }}
+                >
+                  <div className="relative group">
+                    <Image
+                      src={cert.image}
+                      alt={cert.name}
+                      width={600}
+                      height={400}
+                      className="rounded-lg mx-auto transform transition-transform duration-300 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 rounded-lg bg-cyan-400 opacity-0 group-hover:opacity-20 blur-xl transition-opacity duration-300"></div>
+                  </div>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.3 }}
+                    className="mt-6 text-center"
+                  >
+                    <h3 className="text-2xl font-semibold text-cyan-300 drop-shadow-md">
                       {cert.name}
                     </h3>
                     <p className="text-gray-300 text-sm mt-1">
                       Year obtained: {cert.year}
                     </p>
-                  </div>
-                </div>
+                  </motion.div>
+                </motion.div>
               ))}
             </motion.div>
           </div>
           <button
             onClick={onPrev}
-            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gradient-to-r from-purple-600 to-pink-600 p-3 rounded-full text-white hover:scale-110 transition-all duration-300 shadow-lg"
+            className="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gradient-to-r from-cyan-600 to-purple-600 p-3 rounded-full text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
           <button
             onClick={onNext}
-            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gradient-to-r from-purple-600 to-pink-600 p-3 rounded-full text-white hover:scale-110 transition-all duration-300 shadow-lg"
+            className="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gradient-to-r from-cyan-600 to-purple-600 p-3 rounded-full text-white hover:scale-110 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             <ChevronRight className="w-6 h-6" />
           </button>
@@ -85,7 +104,7 @@ export default function Certificates() {
               key={index}
               className={`h-3 w-3 rounded-full transition-all duration-300 ${
                 index === currentCertificate
-                  ? "bg-pink-500 scale-125 shadow-lg"
+                  ? "bg-cyan-500 scale-125 shadow-lg"
                   : "bg-gray-500 hover:bg-gray-400"
               }`}
               onClick={() => setCurrentCertificate(index)}
