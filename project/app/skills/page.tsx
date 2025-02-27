@@ -2,7 +2,10 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Server, Shield, Wifi, Router, Cloud, Lock, Cpu, Users, MessageCircle, CheckSquare, Briefcase, RotateCw, ArrowLeft } from 'lucide-react';
+import { 
+  Server, Shield, Wifi, Router, Cloud, Lock, Cpu, Users, 
+  MessageCircle, CheckSquare, Briefcase, RotateCw, ArrowLeft 
+} from 'lucide-react';
 
 // Hard Skills
 const hardSkills = [
@@ -20,24 +23,22 @@ const hardSkills = [
 
 // Soft Skills
 const softSkills = [
-    { name: 'Communication', icon: <MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-purple-400" /> },
-    { name: 'Problem-Solving', icon: <CheckSquare className="w-5 h-5 md:w-6 md:h-6 text-green-500" /> },
-    { name: 'Leadership', icon: <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-blue-500" /> },
-    { name: 'Adaptability', icon: <RotateCw className="w-5 h-5 md:w-6 md:h-6 text-red-500" /> },
-    { name: 'Teamwork', icon: <Users className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" /> },
-    { name: 'Creativity', icon: <Cpu className="w-5 h-5 md:w-6 md:h-6 text-pink-500" /> },
+  { name: 'Communication', icon: <MessageCircle className="w-5 h-5 md:w-6 md:h-6 text-purple-400" /> },
+  { name: 'Problem-Solving', icon: <CheckSquare className="w-5 h-5 md:w-6 md:h-6 text-green-500" /> },
+  { name: 'Leadership', icon: <Briefcase className="w-5 h-5 md:w-6 md:h-6 text-blue-500" /> },
+  { name: 'Adaptability', icon: <RotateCw className="w-5 h-5 md:w-6 md:h-6 text-red-500" /> },
+  { name: 'Teamwork', icon: <Users className="w-5 h-5 md:w-6 md:h-6 text-yellow-500" /> },
+  { name: 'Creativity', icon: <Cpu className="w-5 h-5 md:w-6 md:h-6 text-pink-500" /> },
 ];
 
-export default function Resume({ setActiveSection }) {
+export default function Resume() {
   const [activeSubSection, setActiveSubSection] = useState('skills');
 
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
+      transition: { staggerChildren: 0.1 },
     },
   };
 
@@ -102,7 +103,7 @@ export default function Resume({ setActiveSection }) {
           </motion.h2>
           {/* Botón para volver a Portfolio */}
           <motion.button
-            onClick={() => window.history.back()} // Lleva a la página anterior
+            onClick={() => window.history.back()}
             className="group flex items-center px-4 py-2 md:px-6 md:py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white rounded-full hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 relative overflow-hidden"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
