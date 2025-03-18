@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { User, Target, CheckCircle, Repeat, Headphones, Users, Heart, BookOpen, Star, ChevronLeft, ChevronRight, MessageCircle } from 'lucide-react';
+import { User, Target, CheckCircle, Repeat, Headphones, Users, Heart, BookOpen, Star, ChevronLeft, ChevronRight, MessageCircle, Brain, Book, Music } from 'lucide-react';
 
 const hhepHabits = [
   {
@@ -137,6 +137,7 @@ export default function HHEP() {
   const [habitsIndex, setHabitsIndex] = useState(0);
   const [missionIndex, setMissionIndex] = useState(0);
   const [rocksIndex, setRocksIndex] = useState(0);
+  const [balanceIndex, setBalanceIndex] = useState(0);
 
   const missionContent = [
     {
@@ -172,6 +173,29 @@ export default function HHEP() {
       title: 'Sand',
       content: 'The small daily distractions, such as checking social media, watching videos without a clear purpose, or procrastinating with minor tasks. Although they are part of the routine, I try to ensure they do not interfere with the time I dedicate to what really matters.',
     },
+  ];
+
+  const balanceContent = [
+    {
+      icon: <CheckCircle className="w-6 h-6 text-pink-400" />,
+      title: 'Physical Dimension',
+      content: 'I maintain my physical well-being through regular exercise three times a week, focusing on a mix of cardio and strength training.',
+    },
+    {
+      icon: <Users className="w-6 h-6 text-pink-400" />,
+      title: 'Social/Emotional Dimension',
+      content: 'I nurture my relationships by scheduling regular video calls with distant family members and dedicating time each week for meaningful connections with close friends. I practice active listening and empathy in my interactions. I also set healthy boundaries to protect my emotional energy.',
+    },
+    {
+      icon: <Brain className="w-6 h-6 text-pink-400" />,
+      title: 'Mental Dimension',
+      content: 'To keep my mind sharp, I dedicate 30 minutes daily to reading books on diverse topics. I challenge myself by learning new programming languages regularly. I also practice mindfulness meditation to clear mental clutter and enhance focus. Every month, I take an online course to expand my knowledge in different areas.',
+    },
+    {
+      icon: <BookOpen className="w-6 h-6 text-pink-400" />,
+      title: 'Spiritual Dimension',
+      content: 'I find clarity and balance through quiet reflection and personal introspection. I take moments throughout the day to disconnect from distractions and focus on my thoughts. Spending time alone in nature or simply enjoying a peaceful environment helps me feel grounded. I explore ideas and perspectives through reading, which allows me to refine my values at my own pace. My sense of purpose comes from continuous self-discovery rather than external validation.',
+    },      
   ];
 
   return (
@@ -223,13 +247,13 @@ export default function HHEP() {
             <div className="space-y-4 text-center md:text-left">
               <h3 className="text-lg md:text-xl font-semibold text-pink-300">How I Stopped Procrastinating and Started Acting</h3>
               <p className="text-gray-300 text-sm md:text-base">
-                There was a time in my life when I realized I was always putting things off. I would say "I’ll do it tomorrow," but tomorrow never came. This procrastination was holding me back and making me feel like I was losing control of my life.
+                There was a time in my life when I realized I was always putting things off. I would say "I'll do it tomorrow," but tomorrow never came. This procrastination was holding me back and making me feel like I was losing control of my life.
               </p>
               <p className="text-gray-300 text-sm md:text-base">
-                It was then that I decided I no longer wanted to live waiting for the perfect moment. I knew that if I didn’t start now, I never would. So I began to face things as they came, one by one. No matter how small the step, I just wanted to move forward.
+                It was then that I decided I no longer wanted to live waiting for the perfect moment. I knew that if I didn't start now, I never would. So I began to face things as they came, one by one. No matter how small the step, I just wanted to move forward.
               </p>
               <p className="text-gray-300 text-sm md:text-base">
-                Over time, I realized that the key was not to wait for the "ideal moment," but simply to take action. It was a mental shift that allowed me to own my time and solve problems as they arose, rather than letting them pile up. Now, when something isn’t right, I prefer to do something, even if it’s small, rather than keep putting it off.
+                Over time, I realized that the key was not to wait for the "ideal moment," but simply to take action. It was a mental shift that allowed me to own my time and solve problems as they arose, rather than letting them pile up. Now, when something isn't right, I prefer to do something, even if it's small, rather than keep putting it off.
               </p>
             </div>
           </div>
@@ -301,13 +325,13 @@ export default function HHEP() {
             <div className="space-y-4 text-center md:text-left">
               <h3 className="text-lg md:text-xl font-semibold text-pink-300">Resolving a Conflict in a Class Project</h3>
               <p className="text-gray-300 text-sm md:text-base">
-                In a group class project, we faced a problem: we couldn’t agree on which approach to take. Some wanted to prioritize functionality and others design, which led us to waste time arguing without making progress.
+                In a group class project, we faced a problem: we couldn't agree on which approach to take. Some wanted to prioritize functionality and others design, which led us to waste time arguing without making progress.
               </p>
               <p className="text-gray-300 text-sm md:text-base">
                 Instead of letting the conflict hold us back, I proposed dividing the work strategically. I suggested that we first define a basic functional structure, and once established, those who wanted to focus on design could improve it without affecting the logic. This way, everyone could work on what interested them without compromising the final result.
               </p>
               <p className="text-gray-300 text-sm md:text-base">
-                Thanks to this, not only did we finish the project on time, but we also learned to leverage each other’s strengths instead of arguing over different approaches. Since then, I always try to find solutions where everyone benefits in team projects.
+                Thanks to this, not only did we finish the project on time, but we also learned to leverage each other's strengths instead of arguing over different approaches. Since then, I always try to find solutions where everyone benefits in team projects.
               </p>
             </div>
           </div>
@@ -326,13 +350,13 @@ export default function HHEP() {
               <div>
                 <h3 className="text-lg md:text-xl font-semibold text-pink-300">Words of Understanding</h3>
                 <p className="text-gray-300 text-sm md:text-base mt-2 italic">
-                  "I understand how difficult this situation can be, and it’s completely normal to feel overwhelmed. Let’s talk together and we’ll get through it."
+                  "I understand how difficult this situation can be, and it's completely normal to feel overwhelmed. Let's talk together and we'll get through it."
                 </p>
               </div>
               <div>
                 <h3 className="text-lg md:text-xl font-semibold text-pink-300">Support for Growth</h3>
                 <p className="text-gray-300 text-sm md:text-base mt-2 italic">
-                  "Making mistakes is totally normal; it’s part of the learning journey. What matters is how you get up and what you take from each experience. What do you think you could do today to turn a stumble into an opportunity?"
+                  "Making mistakes is totally normal; it's part of the learning journey. What matters is how you get up and what you take from each experience. What do you think you could do today to turn a stumble into an opportunity?"
                 </p>
               </div>
               <div>
@@ -345,6 +369,59 @@ export default function HHEP() {
           </div>
         </div>
       </div>
+
+        {/* Synergy Example at Work */}
+        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-4 md:p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+          <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-pink-400 text-center md:text-left">
+            Turning Workplace Drama into Teamwork
+          </h2>
+          <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-4 md:p-6 rounded-lg border border-purple-400 shadow-md">
+            <div className="flex flex-col md:flex-row items-start gap-4">
+              <Repeat className="w-10 h-10 md:w-12 md:h-12 text-pink-400 mx-auto md:mx-0" />
+              <div className="space-y-4 text-center md:text-left">
+                <h3 className="text-lg md:text-xl font-semibold text-pink-300">From Arguments to a Winning Project</h3>
+                <p className="text-gray-300 text-sm md:text-base">
+                  It started as a total mess. Two coworkers were butting heads over how to handle a big client presentation. One wanted sleek slides, the other insisted on keeping it “minimalist.” Meanwhile, another teammate just wanted to get it done, and the manager was getting impatient.
+                </p>
+                <p className="text-gray-300 text-sm md:text-base">
+                  After some serious tension (and almost a coffee spill), they finally stopped arguing and actually listened to each other. Instead of picking one idea, they mixed both—clean design with just enough details. One person took care of visuals, another handled the key points, and the last one made sure it all flowed smoothly.
+                </p>
+                <p className="text-gray-300 text-sm md:text-base">
+                  In the end, the presentation was a hit. The client loved it, the team got praise, and nobody had to throw their coffee in frustration. Lesson learned? Synergy isn’t about agreeing on everything—it’s about combining strengths to get the best results (without losing your sanity).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      {/* Personal Balance */}
+      <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-4 md:p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-pink-400 text-center md:text-left">
+          My Personal Balance - Sharpening the Saw
+        </h2>
+        <motion.div
+          key={balanceIndex}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.3 }}
+          className="flex flex-col md:flex-row items-start gap-4 bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-4 md:p-6 rounded-lg border border-purple-400 shadow-md"
+        >
+          {balanceContent[balanceIndex].icon}
+          <div className="text-center md:text-left">
+            <h3 className="text-lg md:text-xl font-semibold text-pink-300">{balanceContent[balanceIndex].title}</h3>
+            <p className="text-gray-300 text-sm md:text-base mt-2">{balanceContent[balanceIndex].content}</p>
+          </div>
+        </motion.div>
+        <CarouselControls
+          currentIndex={balanceIndex}
+          total={balanceContent.length}
+          onPrevious={() => setBalanceIndex((prev) => (prev - 1 + balanceContent.length) % balanceContent.length)}
+          onNext={() => setBalanceIndex((prev) => (prev + 1) % balanceContent.length)}
+        />
+      </div>
+
+
     </motion.section>
   );
 }
