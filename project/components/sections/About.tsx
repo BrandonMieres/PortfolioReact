@@ -11,22 +11,22 @@ export default function About() {
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
 
-  // Alternar reproducción/pausa al hacer clic en el video
+  // Toggle play/pause when clicking the video
   const togglePlay = () => {
     setIsPlaying(!isPlaying);
   };
 
-  // Actualizar el tiempo actual del video
+  // Update the current time of the video
   const handleProgress = (state) => {
     setCurrentTime(state.playedSeconds);
   };
 
-  // Obtener la duración total del video
+  // Get the total duration of the video
   const handleDuration = (dur) => {
     setDuration(dur);
   };
 
-  // Actualizar la posición del video al mover la barra
+  // Update the video position when moving the slider
   const handleSeek = (e) => {
     const seekTime = (e.target.value / 100) * duration;
     playerRef.current.seekTo(seekTime, 'seconds');
@@ -43,7 +43,7 @@ export default function About() {
     >
       <div className="glass p-4 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border-4 border-gradient-to-r from-purple-400 to-pink-400">
         <div className="flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-8">
-          {/* Imagen de perfil */}
+          {/* Profile Image */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -75,23 +75,23 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.4 }}
               className="text-gray-300 leading-relaxed text-sm md:text-base"
             >
-              Soy Técnico Superior en Gestión de Sistemas de Redes Informáticas con un año de experiencia en el campo. 
-              Mi experiencia incluye administración de redes, sistemas Linux/Unix y resolución de problemas en infraestructuras de red. 
-              Me apasiona optimizar y asegurar sistemas de red para garantizar una conectividad y rendimiento impecables.
+              I am a Higher Technician in Network Systems Management with one year of experience in the field. 
+              My experience includes network administration, Linux/Unix systems, and troubleshooting network infrastructures. 
+              I am passionate about optimizing and securing network systems to ensure flawless connectivity and performance.
             </motion.p>
 
-            {/* Secciones con iconos */}
+            {/* Sections with icons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.5 }}
             >
               <h3 className="text-lg md:text-2xl font-semibold mb-2 text-purple-400 flex items-center justify-center md:justify-start">
-                <Wifi className="w-5 h-5 md:w-6 md:h-6 mr-2 text-pink-400" /> Por qué elegí esta carrera
+                <Wifi className="w-5 h-5 md:w-6 md:h-6 mr-2 text-pink-400" /> Why I chose this career
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4 text-sm md:text-base">
-                Elegí esta carrera por mi profundo interés en cómo las redes permiten la comunicación y impulsan el progreso tecnológico. 
-                La complejidad y el desafío de mantener redes seguras y eficientes me emocionan, y me motiva la oportunidad de resolver problemas del mundo real a través de la tecnología.
+                I chose this career because of my deep interest in how networks enable communication and drive technological progress. 
+                The complexity and challenge of maintaining secure and efficient networks excite me, and I am motivated by the opportunity to solve real-world problems through technology.
               </p>
             </motion.div>
 
@@ -101,11 +101,11 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.6 }}
             >
               <h3 className="text-lg md:text-2xl font-semibold mb-2 text-purple-400 flex items-center justify-center md:justify-start">
-                <Lock className="w-5 h-5 md:w-6 md:h-6 mr-2 text-pink-400" /> Metas futuras
+                <Lock className="w-5 h-5 md:w-6 md:h-6 mr-2 text-pink-400" /> Future Goals
               </h3>
               <p className="text-gray-300 leading-relaxed mb-4 text-sm md:text-base">
-                Mis metas futuras incluyen avanzar en mi experiencia en seguridad de redes, ampliar mis conocimientos en redes en la nube 
-                y convertirme en arquitecto de redes. Aspiro a participar en proyectos impactantes que den forma al futuro de las infraestructuras de red globales.
+                My future goals include advancing my expertise in network security, expanding my knowledge in cloud networking, 
+                and becoming a network architect. I aspire to participate in impactful projects that shape the future of global network infrastructures.
               </p>
             </motion.div>
 
@@ -115,16 +115,16 @@ export default function About() {
               transition={{ duration: 0.5, delay: 0.7 }}
             >
               <h3 className="text-lg md:text-2xl font-semibold mb-2 text-purple-400 flex items-center justify-center md:justify-start">
-                <Cloud className="w-5 h-5 md:w-6 md:h-6 mr-2 text-pink-400" /> Mi paradigma personal
+                <Cloud className="w-5 h-5 md:w-6 md:h-6 mr-2 text-pink-400" /> My personal paradigm
               </h3>
               <p className="text-gray-300 leading-relaxed text-sm md:text-base">
-                Creo en la importancia del aprendizaje continuo, la colaboración y la adaptabilidad en una industria tecnológica en rápida evolución. 
-                Mi enfoque se basa en encontrar soluciones innovadoras, garantizar la seguridad y confiabilidad de las redes, 
-                y siempre buscar la excelencia en cada tarea que emprendo.
+                I believe in the importance of continuous learning, collaboration, and adaptability in a rapidly evolving tech industry. 
+                My approach is based on finding innovative solutions, ensuring the security and reliability of networks, 
+                and always striving for excellence in every task I undertake.
               </p>
             </motion.div>
 
-            {/* Sección de video futurista */}
+            {/* Futuristic video section */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -143,15 +143,15 @@ export default function About() {
                   onDuration={handleDuration}
                   onClick={togglePlay}
                 />
-                {/* Overlay futurista */}
+                {/* Futuristic overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-purple-900/50 via-transparent to-pink-900/50 opacity-70 transition-opacity duration-300 pointer-events-none"></div>
-                {/* Efecto de escaneo */}
+                {/* Scanning effect */}
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-400/20 to-transparent h-1 animate-scan pointer-events-none"></div>
-                {/* Bordes brillantes */}
+                {/* Glowing borders */}
                 <div className="absolute inset-0 rounded-xl border border-cyan-400 opacity-50 blur-sm transition-all duration-300 pointer-events-none"></div>
               </div>
 
-              {/* Barra de progreso */}
+              {/* Progress bar */}
               <div className="w-full max-w-2xl mx-auto mt-2">
                 <input
                   type="range"
@@ -167,7 +167,7 @@ export default function About() {
               </div>
             </motion.div>
 
-            {/* Botón */}
+            {/* Button */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -183,7 +183,7 @@ export default function About() {
                   whileTap={{ scale: 0.95 }}
                   className="relative group overflow-hidden py-2 px-4 md:py-4 md:px-8 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold text-base md:text-lg"
                 >
-                  <span className="relative z-10">EXPLORA MIS HABILIDADES</span>
+                  <span className="relative z-10">EXPLORE MY SKILLS</span>
                   <span className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
                   <span className="absolute -inset-px rounded-full bg-gradient-to-r from-purple-400 to-pink-400 opacity-70 blur-sm group-hover:opacity-100 group-hover:blur-md transition-all duration-300"></span>
                   <span className="absolute inset-0 rounded-full border border-white border-opacity-30"></span>
