@@ -134,7 +134,7 @@ export default function About() {
               <div className="relative w-full max-w-2xl mx-auto rounded-xl overflow-hidden border-2 border-purple-500 shadow-lg aspect-video cursor-pointer">
                 <ReactPlayer
                   ref={playerRef}
-                  url="https://www.youtube.com/watch?v=8-HKosVs61g"
+                  url="https://youtu.be/vupsZwaSesE"
                   playing={isPlaying}
                   controls={false}
                   width="100%"
