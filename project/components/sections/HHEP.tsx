@@ -370,29 +370,28 @@ export default function HHEP() {
         </div>
       </div>
 
-        {/* Synergy Example at Work */}
-        <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-4 md:p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
-          <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-pink-400 text-center md:text-left">
-            Turning Workplace Drama into Teamwork
-          </h2>
-          <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-4 md:p-6 rounded-lg border border-purple-400 shadow-md">
-            <div className="flex flex-col md:flex-row items-start gap-4">
-              <Repeat className="w-10 h-10 md:w-12 md:h-12 text-pink-400 mx-auto md:mx-0" />
-              <div className="space-y-4 text-center md:text-left">
-                <h3 className="text-lg md:text-xl font-semibold text-pink-300">From Arguments to a Winning Project</h3>
-                <p className="text-gray-300 text-sm md:text-base">
-                  It started as a total mess. Two coworkers were butting heads over how to handle a big client presentation. One wanted sleek slides, the other insisted on keeping it “minimalist.” Meanwhile, another teammate just wanted to get it done, and the manager was getting impatient.
-                </p>
-                <p className="text-gray-300 text-sm md:text-base">
-                  After some serious tension (and almost a coffee spill), they finally stopped arguing and actually listened to each other. Instead of picking one idea, they mixed both—clean design with just enough details. One person took care of visuals, another handled the key points, and the last one made sure it all flowed smoothly.
-                </p>
-                <p className="text-gray-300 text-sm md:text-base">
-                  In the end, the presentation was a hit. The client loved it, the team got praise, and nobody had to throw their coffee in frustration. Lesson learned? Synergy isn’t about agreeing on everything—it’s about combining strengths to get the best results (without losing your sanity).
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+<div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-4 md:p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
+  <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-pink-400 text-center md:text-left">
+    Turning Workplace Drama into Teamwork
+  </h2>
+  <div className="bg-gradient-to-r from-purple-800 to-black bg-opacity-60 p-4 md:p-6 rounded-lg border border-purple-400 shadow-md">
+    <div className="flex flex-col md:flex-row items-start gap-4">
+      <Repeat className="w-10 h-10 md:w-12 md:h-12 text-pink-400 mx-auto md:mx-0" />
+      <div className="space-y-4 text-center md:text-left">
+        <h3 className="text-lg md:text-xl font-semibold text-pink-300">
+          From Conflict to Success
+        </h3>
+        <p className="text-gray-300 text-sm md:text-base">
+          A disagreement over presentation style turned into a win when the team combined ideas. One handled visuals, another refined key points, and the final result impressed the client. 
+        </p>
+        <p className="text-gray-300 text-sm md:text-base">
+          Synergy isn’t about agreeing—it’s about merging strengths for the best outcome.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Personal Balance */}
       <div className="bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-4 md:p-8 shadow-lg border border-purple-500 hover:border-pink-500 transition-all duration-300">
